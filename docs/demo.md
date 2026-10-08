@@ -250,10 +250,12 @@ python scripts/evaluate.py
 pytest -q
 ```
 
-## 附：Docker 演示（本机未验证）
+## 附：Docker 演示（已在 CI 实测，未在本机执行）
 
-> ⚠️ 本文档作者**没有在本机执行过下面这几条命令**：该开发机上没有安装 Docker。
-> 命令按标准用法编写，但请以你的环境实测为准。
+> ✅ 2026-10-08 在 GitHub Actions 上实测：镜像构建成功，容器启动后 `/api/health`
+> 返回 `{"status":"ok"}`，`docker compose config` 通过。
+> ⚠️ 开发这个项目的机器上没有 Docker，所以下面这几条命令**没有在本地执行过**——
+> 实测环境是 GitHub 的 runner，本地首次运行请以自己的环境为准。
 
 ```bash
 cp .env.example .env       # 填好 Key 与 EMBEDDING_MODEL

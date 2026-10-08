@@ -8,7 +8,9 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.142-009688?logo=fastapi&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-1.4-1C3C3C)
 ![Chroma](https://img.shields.io/badge/ChromaDB-cosine%20space-FF6B6B)
-![Tests](https://img.shields.io/badge/tests-671%20passed%20(local)-brightgreen)
+![CI](https://github.com/yuanqqqqqqq/campus-course-kb/actions/workflows/ci.yml/badge.svg)
+![Docker](https://github.com/yuanqqqqqqq/campus-course-kb/actions/workflows/docker.yml/badge.svg)
+![Tests](https://img.shields.io/badge/tests-671%20passed-brightgreen)
 ![Coverage](https://img.shields.io/badge/coverage-94%25-brightgreen)
 ![Ruff](https://img.shields.io/badge/lint-ruff%200.16-261230)
 ![License](https://img.shields.io/badge/license-MIT-blue)
@@ -318,10 +320,13 @@ INFO | request_id=- | src.main | 问答链路就绪 | faq_entries=7 collection=c
 
 ## Docker 部署
 
-> ⚠️ **未在本机验证**：开发这个项目的机器上没有安装 Docker，因此下面几条命令
-> （`docker build` / `docker compose up` / `docker compose config`）**没有实际执行过**，
-> 本文档不对它们的运行结果作任何保证。命令按标准用法编写，CI 里有对应的构建任务
-> （见 [CI/CD](#cicd)，同样尚未在 GitHub 上跑过——仓库还没有远端）。
+> ✅ **已在 CI 实测通过**（2026-10-08，GitHub Actions 公开仓库）：
+> `docker build` 构建成功、容器起来后 `/api/health` 返回 `{"status":"ok"}`、
+> `docker compose config` 校验通过。详见 [workflow 运行记录](https://github.com/yuanqqqqqqq/campus-course-kb/actions/workflows/docker.yml)。
+>
+> ⚠️ 仍有一处不适用：**开发这个项目的机器上没有安装 Docker**，所以上面那几条命令
+> 没有在本地执行过（实测是在 GitHub 的 runner 上完成的）。本地首次运行时若遇到
+> 权限或缓存问题，以你的环境为准。
 
 ```bash
 cp .env.example .env        # 必须：compose 的 env_file 指向它，密钥只从这里进容器
@@ -600,9 +605,11 @@ uvicorn src.main:app --reload
   `python scripts/ingest.py --dry-run`；
 - **Docker CI 只验证"能构建、能起来"**：不在 CI 里启动需要真实 Key 的完整 RAG。
 
-> ⚠️ **未验证**：这些工作流**从未在 GitHub 上运行过**——本项目还没有推送到远端仓库，
-> 本机也没有 GitHub Actions 环境。YAML 语法已用 `yaml.safe_load` 校验通过，
-> 工作流的内容是按标准写法编写的。首次推送后请以实际运行结果为准。
+> ✅ **首次运行结果**（2026-10-08，推送到 [公开仓库](https://github.com/yuanqqqqqqq/campus-course-kb) 后触发）：
+> `ci.yml` 三个 job 全绿（Lint/ruff + Tests on Python 3.11 + Tests on Python 3.12，耗时 3m44s）；
+> `docker.yml` 两个 job 全绿（镜像构建 + 容器冒烟 `/api/health`、compose 配置校验）。
+> 这也顺带验证了本机无法覆盖的两件事：**Python 3.11 兼容性**（本机开发环境是 3.12）
+> 与 **Dockerfile 真的能构建出可运行的镜像**。
 
 ## 常见问题
 
