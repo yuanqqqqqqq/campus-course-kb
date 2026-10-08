@@ -1,0 +1,95 @@
+# 持续集成：容器化
+#
+# 只验证"镜像能构建、compose 配置合法"，**不在 CI 里启动需要真实 DeepSeek Key
+# 的完整 RAG**：那会把密钥塞进 CI、还会让流水线因为上游波动而红。
+#
+# 镜像构建很慢（torch 有几百 MB），所以只在跟容器相关的东西变了、或者手动触发时跑。
+
+name: Docker
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "Dockerfile"
+      - ".dockerignore"
+      - "docker-compose.yml"
+      - "requirements.txt"
+      - ".github/workflows/docker.yml"
+  pull_request:
+    paths:
+      - "Dockerfile"
+      - ".dockerignore"
+      - "docker-compose.yml"
+      - "requirements.txt"
+  workflow_dispatch:
+
+concurrency:
+  group: docker-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      # 用 buildx + GHA 缓存：不加缓存的话每次都要重新下载并编译 torch 依赖，
+      # 单次要七八分钟。
+      - name: Build
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
+          load: true
+          tags: campus-course-kb:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # 只验证镜像能起来、健康检查能通过——此时没有模型与 Key，
+      # /api/health 不依赖它们（这正是当初把健康检查做成"不碰任何业务组件"的原因）。
+      - name: Smoke test container
+        run: |
+          docker run -d --name kb-smoke -p 8000:8000 campus-course-kb:ci
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8000/api/health > /dev/null; then
+              echo "健康检查通过"
+              curl -fsS http://127.0.0.1:8000/api/health
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "容器未在 60 秒内通过健康检查，输出容器日志："
+          docker logs kb-smoke
+          exit 1
+
+      - name: Show container logs
+        if: always()
+        run: docker logs kb-smoke || true
+
+      - name: Cleanup
+        if: always()
+        run: docker rm -f kb-smoke || true
+
+  compose-config:
+    name: Validate compose file
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # compose 的 env_file 指向 .env，CI 里没有真实密钥文件，
+      # 用 .env.example 顶替只为验证配置结构（不代表它含有效密钥）。
+      - name: Prepare env file
+        run: cp .env.example .env
+
+      - name: docker compose config
+        run: docker compose config --quiet
+
+      - name: Show resolved config (masked)
+        run: docker compose config | sed -E 's/(API_KEY:).*/\1 ***/'

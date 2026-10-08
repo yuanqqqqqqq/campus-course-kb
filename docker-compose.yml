@@ -1,0 +1,69 @@
+# 校园课程知识库 RAG 问答系统 —— 本地一键启动
+#
+# 前置：
+#   cp .env.example .env    # 填入 DEEPSEEK_API_KEY（不填也能起，只是 RAG 生成会返回 500）
+#   cp .env models 就绪     # 见 README「离线使用本地 Embedding」
+#
+# 启动 / 停止：
+#   docker compose up --build
+#   docker compose down
+#
+# 访问：
+#   http://localhost:8000/docs
+#   http://localhost:8000/api/health
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: campus-course-kb:latest
+    container_name: campus-course-kb
+
+    # ---- 密钥只从这里进容器 ----
+    # .env 已被 .gitignore 忽略；镜像里没有、compose 文件里也没有硬编码。
+    # 文件不存在时 compose 会直接报错退出——这是刻意的，别让服务带着空 Key 起来
+    # 才发现问题。
+    env_file:
+      - .env
+
+    environment:
+      # 容器内的路径与宿主不同，这里显式覆盖（优先级高于 env_file）
+      APP_ENV: production
+      CHROMA_PERSIST_DIR: /app/data/chroma
+      FAQ_PATH: /app/data/faq.json
+      EMBEDDING_MODEL: /app/models/bge-small-zh-v1.5
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+
+    ports:
+      - "8000:8000"
+
+    volumes:
+      # 向量库要持久化：容器重建后 data/chroma 里的索引必须还在，
+      # 否则每次 up 都要重新建库（还要重新加载模型）。
+      - ./data:/app/data
+      # 模型权重只读挂载：既不用打进镜像，也不会被容器改写。
+      # 宿主上没有 models/bge-small-zh-v1.5 时，容器内会是空目录，
+      # 首次检索会尝试联网下载（国内通常失败），见 README 的离线说明。
+      - ./models:/app/models:ro
+
+    # 挂了就重启，但不要无限重启——连不上时 HEALTCHECK 会把它标成 unhealthy，
+    # 一直重启只会把日志刷满。
+    restart: unless-stopped
+
+    # 沿用镜像里的 HEALTHCHECK（GET /api/health），这里显式写出便于一眼看到配置。
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import sys, urllib.request; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3).status == 200 else 1)"
+      interval: 30s
+      timeout: 5s
+      start_period: 40s
+      retries: 3
+
+    # 单副本：每个副本都会各自加载一份 Embedding 模型（几百 MB 内存）。
+    # 要扩容时先确认宿主内存，或者把 Embedding 换成本地模型服务。
+    deploy:
+      replicas: 1
