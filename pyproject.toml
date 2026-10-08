@@ -1,0 +1,81 @@
+[project]
+name = "campus-course-kb"
+version = "0.1.0"
+description = "校园课程知识库 RAG 问答系统"
+readme = "README.md"
+requires-python = ">=3.11"
+# 依赖统一由 requirements.txt 精确锁版本管理，此处不重复声明，
+# 避免两处版本号漂移。
+dependencies = []
+
+# ---------------------------------------------------------------------------
+# pytest
+# ---------------------------------------------------------------------------
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+# 让 `import src.xxx` 在任意工作目录下都能解析到项目根目录
+pythonpath = ["."]
+addopts = "-ra --strict-markers --strict-config"
+# pytest-asyncio 1.x：async def 测试函数无需逐个加 @pytest.mark.asyncio
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+markers = [
+    "integration: 需要真实依赖（向量库 / 网络 / 模型文件）的集成测试",
+    "slow: 耗时较长的测试，可用 -m 'not slow' 跳过",
+]
+
+# ---------------------------------------------------------------------------
+# ruff（阶段 8：CI 里跑 ruff check .）
+# ---------------------------------------------------------------------------
+# **规则集必须写死在仓库里。** ruff 0.16 起默认规则集比过去宽了不少，不写
+# `select` 的话，"本地跑过、CI 挂掉"这种事会在换 ruff 版本时必然发生。
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+# .venv / models 不是项目代码；data 下是语料与向量库。
+exclude = [".venv", "models", "data", ".git"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle error
+    "F",   # pyflakes
+    "W",   # pycodestyle warning
+    "I",   # isort：导入顺序
+    "UP",  # pyupgrade：过时的写法
+    "B",   # flake8-bugbear：常见陷阱
+    "C4",  # flake8-comprehensions
+    "SIM", # flake8-simplify
+    "RUF", # ruff 自有规则
+]
+ignore = [
+    # 中文字符串与注释里的全角标点（，。、"）会被判成"易混淆字符"。
+    # 这在中文项目里是噪音，不是问题。
+    "RUF001",
+    "RUF002",
+    "RUF003",
+    # UP042 建议把 `class Foo(str, Enum)` 换成 `enum.StrEnum`。两者不等价：
+    # `str(Foo.A)` 在前者是 "Foo.A"，后者是 "A"，会影响日志与错误信息的呈现。
+    # 项目里六个枚举都用 `(str, Enum)`，换掉是一次有行为风险的重构，
+    # 收益只是"看起来新一点"——阶段 8 不做这种改动。
+    "UP042",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# 测试里允许 assert 里带字符串常量（pytest 的惯用写法），以及直接 import 私有名做白盒校验。
+"tests/**" = ["B017", "SLF001"]
+
+# ---------------------------------------------------------------------------
+# coverage（阶段 7 使用；此处仅固化配置，不引入 pytest-cov 依赖）
+# ---------------------------------------------------------------------------
+[tool.coverage.run]
+source = ["src"]
+branch = true
+omit = ["src/__init__.py", "*/__init__.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+]
