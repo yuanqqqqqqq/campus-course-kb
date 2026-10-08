@@ -1,0 +1,1860 @@
+{
+  "generated_at": "2026-10-08T01:54:03+00:00",
+  "config": {
+    "dataset": "C:\\Users\\yuan\\Desktop\\万一\\校园课程知识库\\tests\\eval_set.json",
+    "dataset_version": "1",
+    "case_count": 30,
+    "top_k": 5,
+    "faq_enabled": true,
+    "llm_mode": "mock",
+    "classification": "rules-only",
+    "enable_llm_evaluation": false,
+    "embedding_model": "./models/bge-small-zh-v1.5",
+    "collection": "campus_courses",
+    "index_documents": 17,
+    "relevance_threshold": 0.5,
+    "faq_match_threshold": 0.85,
+    "recall_ks": [
+      3,
+      5,
+      10
+    ]
+  },
+  "summary": {
+    "total": 30,
+    "route_accuracy": 0.8667,
+    "rejection_accuracy": 0.8,
+    "over_rejection_rate": 0.0,
+    "faq_hit_rate": 1.0,
+    "keyword_hit_rate": 0.9,
+    "keyword_coverage": 0.925,
+    "average_latency_ms": 25.38,
+    "p50_latency_ms": 30.143,
+    "p95_latency_ms": 40.641,
+    "error_count": 0,
+    "recall_at_3": 0.85,
+    "recall_at_5": 0.95,
+    "recall_at_10": 1.0,
+    "faithfulness": null,
+    "rejection_case_count": 10,
+    "recall_case_count": 20,
+    "faq_case_count": 5
+  },
+  "threshold_analysis": {
+    "grid": [
+      {
+        "threshold": 0.3,
+        "false_rejects": 0,
+        "false_accepts": 8,
+        "total_errors": 8,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_016",
+          "eval_017",
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_026",
+          "eval_029",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.31,
+        "false_rejects": 0,
+        "false_accepts": 8,
+        "total_errors": 8,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_016",
+          "eval_017",
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_026",
+          "eval_029",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.32,
+        "false_rejects": 0,
+        "false_accepts": 8,
+        "total_errors": 8,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_016",
+          "eval_017",
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_026",
+          "eval_029",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.33,
+        "false_rejects": 0,
+        "false_accepts": 8,
+        "total_errors": 8,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_016",
+          "eval_017",
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_026",
+          "eval_029",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.34,
+        "false_rejects": 0,
+        "false_accepts": 8,
+        "total_errors": 8,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_016",
+          "eval_017",
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_026",
+          "eval_029",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.35,
+        "false_rejects": 0,
+        "false_accepts": 7,
+        "total_errors": 7,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_016",
+          "eval_017",
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_026",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.36,
+        "false_rejects": 0,
+        "false_accepts": 7,
+        "total_errors": 7,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_016",
+          "eval_017",
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_026",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.37,
+        "false_rejects": 0,
+        "false_accepts": 7,
+        "total_errors": 7,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_016",
+          "eval_017",
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_026",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.38,
+        "false_rejects": 0,
+        "false_accepts": 7,
+        "total_errors": 7,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_016",
+          "eval_017",
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_026",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.39,
+        "false_rejects": 0,
+        "false_accepts": 7,
+        "total_errors": 7,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_016",
+          "eval_017",
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_026",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.4,
+        "false_rejects": 0,
+        "false_accepts": 6,
+        "total_errors": 6,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_016",
+          "eval_017",
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.41,
+        "false_rejects": 0,
+        "false_accepts": 6,
+        "total_errors": 6,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_016",
+          "eval_017",
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.42,
+        "false_rejects": 0,
+        "false_accepts": 6,
+        "total_errors": 6,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_016",
+          "eval_017",
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.43,
+        "false_rejects": 0,
+        "false_accepts": 4,
+        "total_errors": 4,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.44,
+        "false_rejects": 0,
+        "false_accepts": 4,
+        "total_errors": 4,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.45,
+        "false_rejects": 0,
+        "false_accepts": 4,
+        "total_errors": 4,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.46,
+        "false_rejects": 0,
+        "false_accepts": 4,
+        "total_errors": 4,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.47,
+        "false_rejects": 0,
+        "false_accepts": 4,
+        "total_errors": 4,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_018",
+          "eval_019",
+          "eval_020",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.48,
+        "false_rejects": 0,
+        "false_accepts": 3,
+        "total_errors": 3,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_018",
+          "eval_019",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.49,
+        "false_rejects": 0,
+        "false_accepts": 3,
+        "total_errors": 3,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_018",
+          "eval_019",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.5,
+        "false_rejects": 0,
+        "false_accepts": 2,
+        "total_errors": 2,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_019",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.51,
+        "false_rejects": 0,
+        "false_accepts": 2,
+        "total_errors": 2,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_019",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.52,
+        "false_rejects": 0,
+        "false_accepts": 2,
+        "total_errors": 2,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_019",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.53,
+        "false_rejects": 0,
+        "false_accepts": 2,
+        "total_errors": 2,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_019",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.54,
+        "false_rejects": 0,
+        "false_accepts": 2,
+        "total_errors": 2,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_019",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.55,
+        "false_rejects": 0,
+        "false_accepts": 2,
+        "total_errors": 2,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_019",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.56,
+        "false_rejects": 0,
+        "false_accepts": 2,
+        "total_errors": 2,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_019",
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.57,
+        "false_rejects": 0,
+        "false_accepts": 1,
+        "total_errors": 1,
+        "false_reject_ids": [],
+        "false_accept_ids": [
+          "eval_030"
+        ]
+      },
+      {
+        "threshold": 0.58,
+        "false_rejects": 1,
+        "false_accepts": 0,
+        "total_errors": 1,
+        "false_reject_ids": [
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.59,
+        "false_rejects": 2,
+        "false_accepts": 0,
+        "total_errors": 2,
+        "false_reject_ids": [
+          "eval_011",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.6,
+        "false_rejects": 4,
+        "false_accepts": 0,
+        "total_errors": 4,
+        "false_reject_ids": [
+          "eval_011",
+          "eval_021",
+          "eval_022",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.61,
+        "false_rejects": 4,
+        "false_accepts": 0,
+        "total_errors": 4,
+        "false_reject_ids": [
+          "eval_011",
+          "eval_021",
+          "eval_022",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.62,
+        "false_rejects": 5,
+        "false_accepts": 0,
+        "total_errors": 5,
+        "false_reject_ids": [
+          "eval_002",
+          "eval_011",
+          "eval_021",
+          "eval_022",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.63,
+        "false_rejects": 6,
+        "false_accepts": 0,
+        "total_errors": 6,
+        "false_reject_ids": [
+          "eval_002",
+          "eval_011",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.64,
+        "false_rejects": 6,
+        "false_accepts": 0,
+        "total_errors": 6,
+        "false_reject_ids": [
+          "eval_002",
+          "eval_011",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.65,
+        "false_rejects": 6,
+        "false_accepts": 0,
+        "total_errors": 6,
+        "false_reject_ids": [
+          "eval_002",
+          "eval_011",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.66,
+        "false_rejects": 7,
+        "false_accepts": 0,
+        "total_errors": 7,
+        "false_reject_ids": [
+          "eval_002",
+          "eval_010",
+          "eval_011",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.67,
+        "false_rejects": 10,
+        "false_accepts": 0,
+        "total_errors": 10,
+        "false_reject_ids": [
+          "eval_002",
+          "eval_005",
+          "eval_009",
+          "eval_010",
+          "eval_011",
+          "eval_015",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.68,
+        "false_rejects": 11,
+        "false_accepts": 0,
+        "total_errors": 11,
+        "false_reject_ids": [
+          "eval_002",
+          "eval_004",
+          "eval_005",
+          "eval_009",
+          "eval_010",
+          "eval_011",
+          "eval_015",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.69,
+        "false_rejects": 11,
+        "false_accepts": 0,
+        "total_errors": 11,
+        "false_reject_ids": [
+          "eval_002",
+          "eval_004",
+          "eval_005",
+          "eval_009",
+          "eval_010",
+          "eval_011",
+          "eval_015",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.7,
+        "false_rejects": 12,
+        "false_accepts": 0,
+        "total_errors": 12,
+        "false_reject_ids": [
+          "eval_001",
+          "eval_002",
+          "eval_004",
+          "eval_005",
+          "eval_009",
+          "eval_010",
+          "eval_011",
+          "eval_015",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.71,
+        "false_rejects": 13,
+        "false_accepts": 0,
+        "total_errors": 13,
+        "false_reject_ids": [
+          "eval_001",
+          "eval_002",
+          "eval_004",
+          "eval_005",
+          "eval_006",
+          "eval_009",
+          "eval_010",
+          "eval_011",
+          "eval_015",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.72,
+        "false_rejects": 14,
+        "false_accepts": 0,
+        "total_errors": 14,
+        "false_reject_ids": [
+          "eval_001",
+          "eval_002",
+          "eval_004",
+          "eval_005",
+          "eval_006",
+          "eval_009",
+          "eval_010",
+          "eval_011",
+          "eval_014",
+          "eval_015",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.73,
+        "false_rejects": 14,
+        "false_accepts": 0,
+        "total_errors": 14,
+        "false_reject_ids": [
+          "eval_001",
+          "eval_002",
+          "eval_004",
+          "eval_005",
+          "eval_006",
+          "eval_009",
+          "eval_010",
+          "eval_011",
+          "eval_014",
+          "eval_015",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.74,
+        "false_rejects": 17,
+        "false_accepts": 0,
+        "total_errors": 17,
+        "false_reject_ids": [
+          "eval_001",
+          "eval_002",
+          "eval_003",
+          "eval_004",
+          "eval_005",
+          "eval_006",
+          "eval_007",
+          "eval_009",
+          "eval_010",
+          "eval_011",
+          "eval_013",
+          "eval_014",
+          "eval_015",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.75,
+        "false_rejects": 19,
+        "false_accepts": 0,
+        "total_errors": 19,
+        "false_reject_ids": [
+          "eval_001",
+          "eval_002",
+          "eval_003",
+          "eval_004",
+          "eval_005",
+          "eval_006",
+          "eval_007",
+          "eval_008",
+          "eval_009",
+          "eval_010",
+          "eval_011",
+          "eval_012",
+          "eval_013",
+          "eval_014",
+          "eval_015",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.76,
+        "false_rejects": 19,
+        "false_accepts": 0,
+        "total_errors": 19,
+        "false_reject_ids": [
+          "eval_001",
+          "eval_002",
+          "eval_003",
+          "eval_004",
+          "eval_005",
+          "eval_006",
+          "eval_007",
+          "eval_008",
+          "eval_009",
+          "eval_010",
+          "eval_011",
+          "eval_012",
+          "eval_013",
+          "eval_014",
+          "eval_015",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.77,
+        "false_rejects": 20,
+        "false_accepts": 0,
+        "total_errors": 20,
+        "false_reject_ids": [
+          "eval_001",
+          "eval_002",
+          "eval_003",
+          "eval_004",
+          "eval_005",
+          "eval_006",
+          "eval_007",
+          "eval_008",
+          "eval_009",
+          "eval_010",
+          "eval_011",
+          "eval_012",
+          "eval_013",
+          "eval_014",
+          "eval_015",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024",
+          "eval_025"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.78,
+        "false_rejects": 20,
+        "false_accepts": 0,
+        "total_errors": 20,
+        "false_reject_ids": [
+          "eval_001",
+          "eval_002",
+          "eval_003",
+          "eval_004",
+          "eval_005",
+          "eval_006",
+          "eval_007",
+          "eval_008",
+          "eval_009",
+          "eval_010",
+          "eval_011",
+          "eval_012",
+          "eval_013",
+          "eval_014",
+          "eval_015",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024",
+          "eval_025"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.79,
+        "false_rejects": 20,
+        "false_accepts": 0,
+        "total_errors": 20,
+        "false_reject_ids": [
+          "eval_001",
+          "eval_002",
+          "eval_003",
+          "eval_004",
+          "eval_005",
+          "eval_006",
+          "eval_007",
+          "eval_008",
+          "eval_009",
+          "eval_010",
+          "eval_011",
+          "eval_012",
+          "eval_013",
+          "eval_014",
+          "eval_015",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024",
+          "eval_025"
+        ],
+        "false_accept_ids": []
+      },
+      {
+        "threshold": 0.8,
+        "false_rejects": 20,
+        "false_accepts": 0,
+        "total_errors": 20,
+        "false_reject_ids": [
+          "eval_001",
+          "eval_002",
+          "eval_003",
+          "eval_004",
+          "eval_005",
+          "eval_006",
+          "eval_007",
+          "eval_008",
+          "eval_009",
+          "eval_010",
+          "eval_011",
+          "eval_012",
+          "eval_013",
+          "eval_014",
+          "eval_015",
+          "eval_021",
+          "eval_022",
+          "eval_023",
+          "eval_024",
+          "eval_025"
+        ],
+        "false_accept_ids": []
+      }
+    ],
+    "best": {
+      "threshold": 0.57,
+      "false_rejects": 0,
+      "false_accepts": 1,
+      "total_errors": 1,
+      "false_reject_ids": [],
+      "false_accept_ids": [
+        "eval_030"
+      ]
+    },
+    "best_range": [
+      0.57,
+      0.58
+    ],
+    "scored_cases": 30,
+    "answerable_min_score": 0.5783,
+    "reject_max_score": 0.5754
+  },
+  "details": [
+    {
+      "id": "eval_001",
+      "question": "数据结构的学分是多少？",
+      "type": "factual",
+      "expected_route": "faq",
+      "actual_route": "faq",
+      "route_correct": true,
+      "expected_course_id": "CS201",
+      "expected_course_ids": [
+        "CS201"
+      ],
+      "retrieved_course_ids": [
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS201"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.6998,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": false,
+      "latency_ms": 27.552,
+      "answer": "根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 考核方式 - 期末考试：60% - 平时作业：20% - 实验项目：20% 期末考试为闭卷笔试，题型包括概念选择、复杂度分析、手工推演（如构造哈夫曼树、写出遍历序列）与算法设计题。平时作业共 8 次，每次覆盖一章内容。实验项目共 6 次，按正确性、边界处理、复杂度与实际运行性能综合评分。 总评成绩采用五级制，评定规则按学校本科教学管理规定执行。。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 教学目标 - 掌握线性表、栈、队列、串、树、图等基本数据结构的逻辑结构与存储表示 - 能够独立用 C 语言实现上述数据结构及其典型操作，代码正确、边界处理完整 - 理解时间复杂度与空间复杂度的定义，能够对给定算法做出渐进分析 - 能够针对具体应用场景在多种数据结构之间做出有依据的取舍 - 具备阅读并复现经典算法（排序、查找、图遍历）的能力。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程基本信息 - 课程编号：CS201 - 学分：4 - 授课教师：张伟 - 开课学期：2026-2027-1 - 先修课程：CS101 - 课程类型：专业核心课。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 参考教材 - 《数据结构（C 语言版）》 - 《算法设计基础》 - 《算法导论（第 3 版）》 - 《大话数据结构》。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程简介 本课程是计算机类专业的核心课程，系统介绍常用数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的经典算法及其复杂度分析。 课程以 C 语言为描述语言，强调\"先想清楚数据怎么组织，再动手写代码\"的思维方式。学完本课程后，学生应当能够针对一个具体问题判断该用数组、链表、树还是图，能够估算不同实现方案的时间与空间代价，并能读懂主流算法题解中出现的复杂度记号。 本课程是后续数据库系统、操作系统、编译原理与机器学习等课程的共同基础。。"
+    },
+    {
+      "id": "eval_002",
+      "question": "高等数学（上）是谁教的？",
+      "type": "factual",
+      "expected_route": "faq",
+      "actual_route": "faq",
+      "route_correct": true,
+      "expected_course_id": "MA101",
+      "expected_course_ids": [
+        "MA101"
+      ],
+      "retrieved_course_ids": [
+        "MA101",
+        "CS201",
+        "CS401",
+        "CS201",
+        "CS201"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.6184,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": true,
+      "latency_ms": 0.184,
+      "answer": "MA101《高等数学（上）》为 5 学分，授课教师王芳，开课学期 2026-2027-1。"
+    },
+    {
+      "id": "eval_003",
+      "question": "计算机组成原理有几个学分？",
+      "type": "factual",
+      "expected_route": "faq",
+      "actual_route": "faq",
+      "route_correct": true,
+      "expected_course_id": "CS202",
+      "expected_course_ids": [
+        "CS202"
+      ],
+      "retrieved_course_ids": [
+        "CS202",
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS201"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.7317,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": false,
+      "latency_ms": 31.58,
+      "answer": "根据《计算机组成原理》（CS202）课程资料：课程：计算机组成原理（CS202） 学分：4 | 授课教师：刘洋 | 开课学期：2026-2027-1 | 先修课程：CS101 课程简介 讲授单机系统的硬件组成与工作原理。内容包括数据的表示与运算、存储系统层次结构、指令系统与寻址方式、中央处理器的结构与指令执行流程、总线与输入输出系统。通过实验环节让学生理解高级语言程序到机器指令的映射过程，为操作系统与体系结构类课程建立硬件视角。 考核方式 期末考试 60%、平时作业 25%、实验项目 15% 参考教材 《计算机组成原理（第 3 版）》 标签 专业核心课、硬件、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 考核方式 - 期末考试：60% - 平时作业：20% - 实验项目：20% 期末考试为闭卷笔试，题型包括概念选择、复杂度分析、手工推演（如构造哈夫曼树、写出遍历序列）与算法设计题。平时作业共 8 次，每次覆盖一章内容。实验项目共 6 次，按正确性、边界处理、复杂度与实际运行性能综合评分。 总评成绩采用五级制，评定规则按学校本科教学管理规定执行。。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程简介 本课程是计算机类专业的核心课程，系统介绍常用数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的经典算法及其复杂度分析。 课程以 C 语言为描述语言，强调\"先想清楚数据怎么组织，再动手写代码\"的思维方式。学完本课程后，学生应当能够针对一个具体问题判断该用数组、链表、树还是图，能够估算不同实现方案的时间与空间代价，并能读懂主流算法题解中出现的复杂度记号。 本课程是后续数据库系统、操作系统、编译原理与机器学习等课程的共同基础。。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 教学内容 第八章 排序（8 学时） - 排序的基本概念，稳定性与内部排序、外部排序的区分 - 插入类排序：直接插入排序、折半插入排序、希尔排序 - 交换类排序：冒泡排序、快速排序（枢轴选择与划分过程） - 选择类排序：简单选择排序、堆排序（建堆与调整过程） - 归并排序：二路归并的递归与非递归实现 - 基数排序的基本思想与适用场景 - 各种排序算法在时间、空间、稳定性三个维度上的对比，以及实际工程中的选择依据 - 外部排序：多路归并与败者树 重点与难点：快速排序在最坏情况下的退化条件与三数取中优化；堆排序中\"自顶向下调整\"与\"自底向上建堆\"的区别。 实验六：实现快速排序、堆排序与归并排序，在百万级随机数据上对比三者的实际运行时间。。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 课程简介 计算机类专业的核心课程。系统讲授线性表、栈与队列、串、树与二叉树、图等基本数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的常见算法及其复杂度分析。课程要求学生能够针对具体问题选择合适的数据结构，并用代码实现与评估其时间空间代价。 考核方式 期末考试 60%、平时作业 20%、实验项目 20% 参考教材 《数据结构（C 语言版）》 《算法设计基础》 标签 专业核心课、算法、必修。"
+    },
+    {
+      "id": "eval_004",
+      "question": "操作系统的授课教师是谁？",
+      "type": "factual",
+      "expected_route": "faq",
+      "actual_route": "faq",
+      "route_correct": true,
+      "expected_course_id": "CS302",
+      "expected_course_ids": [
+        "CS302"
+      ],
+      "retrieved_course_ids": [
+        "CS302",
+        "CS301",
+        "CS201",
+        "CS201",
+        "CS401"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.6799,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": false,
+      "latency_ms": 30.655,
+      "answer": "根据《操作系统》（CS302）课程资料：课程：操作系统（CS302） 学分：4 | 授课教师：赵磊 | 开课学期：2026-2027-2 | 先修课程：CS201,CS202 课程简介 讲授操作系统的核心机制与实现思路。内容包括进程与线程、处理机调度、进程同步与死锁、内存管理与虚拟存储、文件系统、设备管理与输入输出。课程实验基于一个小型教学内核展开，要求学生实现系统调用、进程调度与简单的文件系统，从而理解抽象概念背后的真实代码。 考核方式 期末考试 55%、平时作业 15%、实验项目 30% 参考教材 《操作系统概念（第 9 版）》 《现代操作系统》 标签 专业核心课、系统、必修。 根据《数据库系统》（CS301）课程资料：课程：数据库系统（CS301） 学分：3.5 | 授课教师：陈静 | 开课学期：2026-2027-2 | 先修课程：CS201 课程简介 讲授数据库系统的原理与工程实践。内容包括关系模型与关系代数、SQL 语言、数据库设计与范式理论、索引与查询优化、事务与并发控制、故障恢复。课程以一个完整的业务系统为背景，要求学生完成从概念设计到物理实现、再到查询调优的全过程。 考核方式 期末考试 50%、平时作业 20%、实验项目 30% 参考教材 《数据库系统概论（第 6 版）》 《SQL 必知必会》 标签 专业核心课、数据管理、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程基本信息 - 课程编号：CS201 - 学分：4 - 授课教师：张伟 - 开课学期：2026-2027-1 - 先修课程：CS101 - 课程类型：专业核心课。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程简介 本课程是计算机类专业的核心课程，系统介绍常用数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的经典算法及其复杂度分析。 课程以 C 语言为描述语言，强调\"先想清楚数据怎么组织，再动手写代码\"的思维方式。学完本课程后，学生应当能够针对一个具体问题判断该用数组、链表、树还是图，能够估算不同实现方案的时间与空间代价，并能读懂主流算法题解中出现的复杂度记号。 本课程是后续数据库系统、操作系统、编译原理与机器学习等课程的共同基础。。 根据《机器学习导论》（CS401）课程资料：课程：机器学习导论（CS401） 学分：3 | 授课教师：孙倩 | 开课学期：2026-2027-2 | 先修课程：CS201,MA101 课程简介 面向高年级本科生的机器学习入门课程。内容包括监督学习与无监督学习的基本框架、线性模型与逻辑回归、决策树与集成方法、支持向量机、聚类与降维、模型评估与过拟合处理。课程以项目驱动，要求学生在真实数据集上完成特征工程、模型训练与调参，并撰写实验报告说明结论的可靠性边界。 考核方式 期末考试 40%、平时作业 20%、实验项目 40% 参考教材 《机器学习》 《统计学习方法（第 2 版）》 标签 专业选修课、人工智能、项目驱动。"
+    },
+    {
+      "id": "eval_005",
+      "question": "机器学习导论是哪一学期开的课？",
+      "type": "factual",
+      "expected_route": "course_query",
+      "actual_route": "course_query",
+      "route_correct": true,
+      "expected_course_id": "CS401",
+      "expected_course_ids": [
+        "CS401"
+      ],
+      "retrieved_course_ids": [
+        "CS401",
+        "MA101",
+        "CS201",
+        "CS201",
+        "CS201"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.6693,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": false,
+      "latency_ms": 34.121,
+      "answer": "根据《机器学习导论》（CS401）课程资料：课程：机器学习导论（CS401） 学分：3 | 授课教师：孙倩 | 开课学期：2026-2027-2 | 先修课程：CS201,MA101 课程简介 面向高年级本科生的机器学习入门课程。内容包括监督学习与无监督学习的基本框架、线性模型与逻辑回归、决策树与集成方法、支持向量机、聚类与降维、模型评估与过拟合处理。课程以项目驱动，要求学生在真实数据集上完成特征工程、模型训练与调参，并撰写实验报告说明结论的可靠性边界。 考核方式 期末考试 40%、平时作业 20%、实验项目 40% 参考教材 《机器学习》 《统计学习方法（第 2 版）》 标签 专业选修课、人工智能、项目驱动。 根据《高等数学（上）》（MA101）课程资料：课程：高等数学（上）（MA101） 学分：5 | 授课教师：王芳 | 开课学期：2026-2027-1 | 先修课程：无 课程简介 理工科各专业的数学基础课，覆盖一元函数微积分。内容包括极限与连续、导数与微分、微分中值定理及其应用、不定积分与定积分、定积分的几何与物理应用。课程强调极限思想与严格的推理训练，为后续的概率统计、数值计算与机器学习类课程打基础。 考核方式 期末考试 70%、平时作业 30% 参考教材 《高等数学（上册）》 《高等数学习题精选》 标签 数学基础课、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程基本信息 - 课程编号：CS201 - 学分：4 - 授课教师：张伟 - 开课学期：2026-2027-1 - 先修课程：CS101 - 课程类型：专业核心课。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程简介 本课程是计算机类专业的核心课程，系统介绍常用数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的经典算法及其复杂度分析。 课程以 C 语言为描述语言，强调\"先想清楚数据怎么组织，再动手写代码\"的思维方式。学完本课程后，学生应当能够针对一个具体问题判断该用数组、链表、树还是图，能够估算不同实现方案的时间与空间代价，并能读懂主流算法题解中出现的复杂度记号。 本课程是后续数据库系统、操作系统、编译原理与机器学习等课程的共同基础。。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 考核方式 - 期末考试：60% - 平时作业：20% - 实验项目：20% 期末考试为闭卷笔试，题型包括概念选择、复杂度分析、手工推演（如构造哈夫曼树、写出遍历序列）与算法设计题。平时作业共 8 次，每次覆盖一章内容。实验项目共 6 次，按正确性、边界处理、复杂度与实际运行性能综合评分。 总评成绩采用五级制，评定规则按学校本科教学管理规定执行。。"
+    },
+    {
+      "id": "eval_006",
+      "question": "数据库系统的考核方式是怎样的？",
+      "type": "factual",
+      "expected_route": "faq",
+      "actual_route": "faq",
+      "route_correct": true,
+      "expected_course_id": "CS301",
+      "expected_course_ids": [
+        "CS301"
+      ],
+      "retrieved_course_ids": [
+        "CS301",
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS302"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.7043,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": false,
+      "latency_ms": 30.05,
+      "answer": "根据《数据库系统》（CS301）课程资料：课程：数据库系统（CS301） 学分：3.5 | 授课教师：陈静 | 开课学期：2026-2027-2 | 先修课程：CS201 课程简介 讲授数据库系统的原理与工程实践。内容包括关系模型与关系代数、SQL 语言、数据库设计与范式理论、索引与查询优化、事务与并发控制、故障恢复。课程以一个完整的业务系统为背景，要求学生完成从概念设计到物理实现、再到查询调优的全过程。 考核方式 期末考试 50%、平时作业 20%、实验项目 30% 参考教材 《数据库系统概论（第 6 版）》 《SQL 必知必会》 标签 专业核心课、数据管理、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 考核方式 - 期末考试：60% - 平时作业：20% - 实验项目：20% 期末考试为闭卷笔试，题型包括概念选择、复杂度分析、手工推演（如构造哈夫曼树、写出遍历序列）与算法设计题。平时作业共 8 次，每次覆盖一章内容。实验项目共 6 次，按正确性、边界处理、复杂度与实际运行性能综合评分。 总评成绩采用五级制，评定规则按学校本科教学管理规定执行。。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程简介 本课程是计算机类专业的核心课程，系统介绍常用数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的经典算法及其复杂度分析。 课程以 C 语言为描述语言，强调\"先想清楚数据怎么组织，再动手写代码\"的思维方式。学完本课程后，学生应当能够针对一个具体问题判断该用数组、链表、树还是图，能够估算不同实现方案的时间与空间代价，并能读懂主流算法题解中出现的复杂度记号。 本课程是后续数据库系统、操作系统、编译原理与机器学习等课程的共同基础。。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 课程简介 计算机类专业的核心课程。系统讲授线性表、栈与队列、串、树与二叉树、图等基本数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的常见算法及其复杂度分析。课程要求学生能够针对具体问题选择合适的数据结构，并用代码实现与评估其时间空间代价。 考核方式 期末考试 60%、平时作业 20%、实验项目 20% 参考教材 《数据结构（C 语言版）》 《算法设计基础》 标签 专业核心课、算法、必修。 根据《操作系统》（CS302）课程资料：课程：操作系统（CS302） 学分：4 | 授课教师：赵磊 | 开课学期：2026-2027-2 | 先修课程：CS201,CS202 课程简介 讲授操作系统的核心机制与实现思路。内容包括进程与线程、处理机调度、进程同步与死锁、内存管理与虚拟存储、文件系统、设备管理与输入输出。课程实验基于一个小型教学内核展开，要求学生实现系统调用、进程调度与简单的文件系统，从而理解抽象概念背后的真实代码。 考核方式 期末考试 55%、平时作业 15%、实验项目 30% 参考教材 《操作系统概念（第 9 版）》 《现代操作系统》 标签 专业核心课、系统、必修。"
+    },
+    {
+      "id": "eval_007",
+      "question": "程序设计基础的课程编号是多少？",
+      "type": "factual",
+      "expected_route": "course_query",
+      "actual_route": "course_query",
+      "route_correct": true,
+      "expected_course_id": "CS101",
+      "expected_course_ids": [
+        "CS101"
+      ],
+      "retrieved_course_ids": [
+        "CS101",
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS201"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.7348,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": false,
+      "latency_ms": 31.442,
+      "answer": "根据《程序设计基础》（CS101）课程资料：课程：程序设计基础（CS101） 学分：4 | 授课教师：李明 | 开课学期：2026-2027-1 | 先修课程：无 课程简介 面向零基础学生的程序设计入门课程。以 C 语言为载体，讲授变量与数据类型、运算符与表达式、流程控制、函数与递归、数组与字符串、指针初步以及结构体等内容，重点训练把自然语言描述的问题转化为可执行程序的能力。课程包含大量上机练习，要求学生在学期内独立完成不少于 800 行代码。 考核方式 期末考试 50%、平时作业 30%、实验项目 20% 参考教材 《C 程序设计语言（第 2 版）》 《程序设计基础实验指导》 标签 专业基础课、编程入门、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程基本信息 - 课程编号：CS201 - 学分：4 - 授课教师：张伟 - 开课学期：2026-2027-1 - 先修课程：CS101 - 课程类型：专业核心课。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 课程简介 计算机类专业的核心课程。系统讲授线性表、栈与队列、串、树与二叉树、图等基本数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的常见算法及其复杂度分析。课程要求学生能够针对具体问题选择合适的数据结构，并用代码实现与评估其时间空间代价。 考核方式 期末考试 60%、平时作业 20%、实验项目 20% 参考教材 《数据结构（C 语言版）》 《算法设计基础》 标签 专业核心课、算法、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 考核方式 - 期末考试：60% - 平时作业：20% - 实验项目：20% 期末考试为闭卷笔试，题型包括概念选择、复杂度分析、手工推演（如构造哈夫曼树、写出遍历序列）与算法设计题。平时作业共 8 次，每次覆盖一章内容。实验项目共 6 次，按正确性、边界处理、复杂度与实际运行性能综合评分。 总评成绩采用五级制，评定规则按学校本科教学管理规定执行。。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 参考教材 - 《数据结构（C 语言版）》 - 《算法设计基础》 - 《算法导论（第 3 版）》 - 《大话数据结构》。"
+    },
+    {
+      "id": "eval_008",
+      "question": "数据结构与算法有多少学时？",
+      "type": "factual",
+      "expected_route": "course_query",
+      "actual_route": "course_query",
+      "route_correct": true,
+      "expected_course_id": "CS201",
+      "expected_course_ids": [
+        "CS201"
+      ],
+      "retrieved_course_ids": [
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS201"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.7493,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": false,
+      "keyword_coverage": 0.0,
+      "cached": false,
+      "latency_ms": 31.013,
+      "answer": "根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 考核方式 - 期末考试：60% - 平时作业：20% - 实验项目：20% 期末考试为闭卷笔试，题型包括概念选择、复杂度分析、手工推演（如构造哈夫曼树、写出遍历序列）与算法设计题。平时作业共 8 次，每次覆盖一章内容。实验项目共 6 次，按正确性、边界处理、复杂度与实际运行性能综合评分。 总评成绩采用五级制，评定规则按学校本科教学管理规定执行。。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 教学目标 - 掌握线性表、栈、队列、串、树、图等基本数据结构的逻辑结构与存储表示 - 能够独立用 C 语言实现上述数据结构及其典型操作，代码正确、边界处理完整 - 理解时间复杂度与空间复杂度的定义，能够对给定算法做出渐进分析 - 能够针对具体应用场景在多种数据结构之间做出有依据的取舍 - 具备阅读并复现经典算法（排序、查找、图遍历）的能力。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程基本信息 - 课程编号：CS201 - 学分：4 - 授课教师：张伟 - 开课学期：2026-2027-1 - 先修课程：CS101 - 课程类型：专业核心课。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 参考教材 - 《数据结构（C 语言版）》 - 《算法设计基础》 - 《算法导论（第 3 版）》 - 《大话数据结构》。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程简介 本课程是计算机类专业的核心课程，系统介绍常用数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的经典算法及其复杂度分析。 课程以 C 语言为描述语言，强调\"先想清楚数据怎么组织，再动手写代码\"的思维方式。学完本课程后，学生应当能够针对一个具体问题判断该用数组、链表、树还是图，能够估算不同实现方案的时间与空间代价，并能读懂主流算法题解中出现的复杂度记号。 本课程是后续数据库系统、操作系统、编译原理与机器学习等课程的共同基础。。"
+    },
+    {
+      "id": "eval_009",
+      "question": "机器学习导论用什么教材？",
+      "type": "factual",
+      "expected_route": "faq",
+      "actual_route": "faq",
+      "route_correct": true,
+      "expected_course_id": "CS401",
+      "expected_course_ids": [
+        "CS401"
+      ],
+      "retrieved_course_ids": [
+        "CS401",
+        "CS202",
+        "MA101",
+        "CS201",
+        "CS201"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.661,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": false,
+      "latency_ms": 43.705,
+      "answer": "根据《机器学习导论》（CS401）课程资料：课程：机器学习导论（CS401） 学分：3 | 授课教师：孙倩 | 开课学期：2026-2027-2 | 先修课程：CS201,MA101 课程简介 面向高年级本科生的机器学习入门课程。内容包括监督学习与无监督学习的基本框架、线性模型与逻辑回归、决策树与集成方法、支持向量机、聚类与降维、模型评估与过拟合处理。课程以项目驱动，要求学生在真实数据集上完成特征工程、模型训练与调参，并撰写实验报告说明结论的可靠性边界。 考核方式 期末考试 40%、平时作业 20%、实验项目 40% 参考教材 《机器学习》 《统计学习方法（第 2 版）》 标签 专业选修课、人工智能、项目驱动。 根据《计算机组成原理》（CS202）课程资料：课程：计算机组成原理（CS202） 学分：4 | 授课教师：刘洋 | 开课学期：2026-2027-1 | 先修课程：CS101 课程简介 讲授单机系统的硬件组成与工作原理。内容包括数据的表示与运算、存储系统层次结构、指令系统与寻址方式、中央处理器的结构与指令执行流程、总线与输入输出系统。通过实验环节让学生理解高级语言程序到机器指令的映射过程，为操作系统与体系结构类课程建立硬件视角。 考核方式 期末考试 60%、平时作业 25%、实验项目 15% 参考教材 《计算机组成原理（第 3 版）》 标签 专业核心课、硬件、必修。 根据《高等数学（上）》（MA101）课程资料：课程：高等数学（上）（MA101） 学分：5 | 授课教师：王芳 | 开课学期：2026-2027-1 | 先修课程：无 课程简介 理工科各专业的数学基础课，覆盖一元函数微积分。内容包括极限与连续、导数与微分、微分中值定理及其应用、不定积分与定积分、定积分的几何与物理应用。课程强调极限思想与严格的推理训练，为后续的概率统计、数值计算与机器学习类课程打基础。 考核方式 期末考试 70%、平时作业 30% 参考教材 《高等数学（上册）》 《高等数学习题精选》 标签 数学基础课、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程简介 本课程是计算机类专业的核心课程，系统介绍常用数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的经典算法及其复杂度分析。 课程以 C 语言为描述语言，强调\"先想清楚数据怎么组织，再动手写代码\"的思维方式。学完本课程后，学生应当能够针对一个具体问题判断该用数组、链表、树还是图，能够估算不同实现方案的时间与空间代价，并能读懂主流算法题解中出现的复杂度记号。 本课程是后续数据库系统、操作系统、编译原理与机器学习等课程的共同基础。。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 参考教材 - 《数据结构（C 语言版）》 - 《算法设计基础》 - 《算法导论（第 3 版）》 - 《大话数据结构》。"
+    },
+    {
+      "id": "eval_010",
+      "question": "高等数学（上）的期末考试占多少比例？",
+      "type": "factual",
+      "expected_route": "faq",
+      "actual_route": "course_query",
+      "route_correct": false,
+      "expected_course_id": "MA101",
+      "expected_course_ids": [
+        "MA101"
+      ],
+      "retrieved_course_ids": [
+        "MA101",
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS201"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.6567,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": false,
+      "latency_ms": 43.845,
+      "answer": "根据《高等数学（上）》（MA101）课程资料：课程：高等数学（上）（MA101） 学分：5 | 授课教师：王芳 | 开课学期：2026-2027-1 | 先修课程：无 课程简介 理工科各专业的数学基础课，覆盖一元函数微积分。内容包括极限与连续、导数与微分、微分中值定理及其应用、不定积分与定积分、定积分的几何与物理应用。课程强调极限思想与严格的推理训练，为后续的概率统计、数值计算与机器学习类课程打基础。 考核方式 期末考试 70%、平时作业 30% 参考教材 《高等数学（上册）》 《高等数学习题精选》 标签 数学基础课、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 考核方式 - 期末考试：60% - 平时作业：20% - 实验项目：20% 期末考试为闭卷笔试，题型包括概念选择、复杂度分析、手工推演（如构造哈夫曼树、写出遍历序列）与算法设计题。平时作业共 8 次，每次覆盖一章内容。实验项目共 6 次，按正确性、边界处理、复杂度与实际运行性能综合评分。 总评成绩采用五级制，评定规则按学校本科教学管理规定执行。。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程基本信息 - 课程编号：CS201 - 学分：4 - 授课教师：张伟 - 开课学期：2026-2027-1 - 先修课程：CS101 - 课程类型：专业核心课。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 参考教材 - 《数据结构（C 语言版）》 - 《算法设计基础》 - 《算法导论（第 3 版）》 - 《大话数据结构》。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 教学内容 本课程共 64 学时，其中理论讲授 48 学时、实验 16 学时。内容按\"抽象数据类型 → 存储实现 → 典型操作 → 复杂度分析\"的顺序组织，每一章都配有对应的上机实验。 ### 第一章 绪论（4 学时） - 数据结构的基本概念：数据、数据元素、数据项与数据对象 - 逻辑结构与存储结构的区别与联系，四种基本逻辑结构的划分 - 抽象数据类型的定义、表示与实现三者之间的关系 - 算法及其特性，时间复杂度与空间复杂度的渐进表示法（大 O 记号） - 常见复杂度量级的比较：常数、对数、线性、线性对数、平方、指数 重点与难点：区分\"逻辑结构\"与\"存储结构\"这两个层次，理解为什么同一个逻辑结构可以有不同的存储实现，而不同的存储实现会带来完全不同的操作代价。 ### 第二章 线性表（8 学时） - 线性表的定义与抽象数据类型描述 - 顺序存储：顺序表的插入、删除、按位查找、按值查找及其复杂度分析 - 链式存储：单链表的建立（头插法与尾插法）、插入、删除、查找 - 双向链表与循环链表的结构特点，以及它们在插入删除时的边界处理差异 - 顺序表与链表的对比：随机访问能力、插入删除代价、存储开销、缓存友好性 - 有序表的合并、归并与去重 重点与难点：链表操作中指针的赋值顺序。删除结点时\"先改指针再释放内存\"与\"先释放再改指针\"的区别，是初学者最常出错的地方。 实验一：实现一个支持插入、删除、按值查找与遍历的动态顺序表，要求能够自动扩容，并在删除后能够收缩容量。 ###。"
+    },
+    {
+      "id": "eval_011",
+      "question": "哪些课程的先修课里有 CS101？",
+      "type": "relation",
+      "expected_route": "course_query",
+      "actual_route": "faq",
+      "route_correct": false,
+      "expected_course_id": "CS201",
+      "expected_course_ids": [
+        "CS201",
+        "CS202"
+      ],
+      "retrieved_course_ids": [
+        "CS101",
+        "CS201",
+        "CS401",
+        "CS201",
+        "CS201"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.5872,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": false,
+      "keyword_coverage": 0.5,
+      "cached": false,
+      "latency_ms": 33.455,
+      "answer": "根据《程序设计基础》（CS101）课程资料：课程：程序设计基础（CS101） 学分：4 | 授课教师：李明 | 开课学期：2026-2027-1 | 先修课程：无 课程简介 面向零基础学生的程序设计入门课程。以 C 语言为载体，讲授变量与数据类型、运算符与表达式、流程控制、函数与递归、数组与字符串、指针初步以及结构体等内容，重点训练把自然语言描述的问题转化为可执行程序的能力。课程包含大量上机练习，要求学生在学期内独立完成不少于 800 行代码。 考核方式 期末考试 50%、平时作业 30%、实验项目 20% 参考教材 《C 程序设计语言（第 2 版）》 《程序设计基础实验指导》 标签 专业基础课、编程入门、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程基本信息 - 课程编号：CS201 - 学分：4 - 授课教师：张伟 - 开课学期：2026-2027-1 - 先修课程：CS101 - 课程类型：专业核心课。 根据《机器学习导论》（CS401）课程资料：课程：机器学习导论（CS401） 学分：3 | 授课教师：孙倩 | 开课学期：2026-2027-2 | 先修课程：CS201,MA101 课程简介 面向高年级本科生的机器学习入门课程。内容包括监督学习与无监督学习的基本框架、线性模型与逻辑回归、决策树与集成方法、支持向量机、聚类与降维、模型评估与过拟合处理。课程以项目驱动，要求学生在真实数据集上完成特征工程、模型训练与调参，并撰写实验报告说明结论的可靠性边界。 考核方式 期末考试 40%、平时作业 20%、实验项目 40% 参考教材 《机器学习》 《统计学习方法（第 2 版）》 标签 专业选修课、人工智能、项目驱动。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 课程简介 计算机类专业的核心课程。系统讲授线性表、栈与队列、串、树与二叉树、图等基本数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的常见算法及其复杂度分析。课程要求学生能够针对具体问题选择合适的数据结构，并用代码实现与评估其时间空间代价。 考核方式 期末考试 60%、平时作业 20%、实验项目 20% 参考教材 《数据结构（C 语言版）》 《算法设计基础》 标签 专业核心课、算法、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 教学内容 第八章 排序（8 学时） - 排序的基本概念，稳定性与内部排序、外部排序的区分 - 插入类排序：直接插入排序、折半插入排序、希尔排序 - 交换类排序：冒泡排序、快速排序（枢轴选择与划分过程） - 选择类排序：简单选择排序、堆排序（建堆与调整过程） - 归并排序：二路归并的递归与非递归实现 - 基数排序的基本思想与适用场景 - 各种排序算法在时间、空间、稳定性三个维度上的对比，以及实际工程中的选择依据 - 外部排序：多路归并与败者树 重点与难点：快速排序在最坏情况下的退化条件与三数取中优化；堆排序中\"自顶向下调整\"与\"自底向上建堆\"的区别。 实验六：实现快速排序、堆排序与归并排序，在百万级随机数据上对比三者的实际运行时间。。"
+    },
+    {
+      "id": "eval_012",
+      "question": "数据库系统的先修课程是什么？",
+      "type": "relation",
+      "expected_route": "faq",
+      "actual_route": "faq",
+      "route_correct": true,
+      "expected_course_id": "CS301",
+      "expected_course_ids": [
+        "CS301"
+      ],
+      "retrieved_course_ids": [
+        "CS301",
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS302"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.7464,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": false,
+      "latency_ms": 36.896,
+      "answer": "根据《数据库系统》（CS301）课程资料：课程：数据库系统（CS301） 学分：3.5 | 授课教师：陈静 | 开课学期：2026-2027-2 | 先修课程：CS201 课程简介 讲授数据库系统的原理与工程实践。内容包括关系模型与关系代数、SQL 语言、数据库设计与范式理论、索引与查询优化、事务与并发控制、故障恢复。课程以一个完整的业务系统为背景，要求学生完成从概念设计到物理实现、再到查询调优的全过程。 考核方式 期末考试 50%、平时作业 20%、实验项目 30% 参考教材 《数据库系统概论（第 6 版）》 《SQL 必知必会》 标签 专业核心课、数据管理、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程简介 本课程是计算机类专业的核心课程，系统介绍常用数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的经典算法及其复杂度分析。 课程以 C 语言为描述语言，强调\"先想清楚数据怎么组织，再动手写代码\"的思维方式。学完本课程后，学生应当能够针对一个具体问题判断该用数组、链表、树还是图，能够估算不同实现方案的时间与空间代价，并能读懂主流算法题解中出现的复杂度记号。 本课程是后续数据库系统、操作系统、编译原理与机器学习等课程的共同基础。。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程基本信息 - 课程编号：CS201 - 学分：4 - 授课教师：张伟 - 开课学期：2026-2027-1 - 先修课程：CS101 - 课程类型：专业核心课。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 课程简介 计算机类专业的核心课程。系统讲授线性表、栈与队列、串、树与二叉树、图等基本数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的常见算法及其复杂度分析。课程要求学生能够针对具体问题选择合适的数据结构，并用代码实现与评估其时间空间代价。 考核方式 期末考试 60%、平时作业 20%、实验项目 20% 参考教材 《数据结构（C 语言版）》 《算法设计基础》 标签 专业核心课、算法、必修。 根据《操作系统》（CS302）课程资料：课程：操作系统（CS302） 学分：4 | 授课教师：赵磊 | 开课学期：2026-2027-2 | 先修课程：CS201,CS202 课程简介 讲授操作系统的核心机制与实现思路。内容包括进程与线程、处理机调度、进程同步与死锁、内存管理与虚拟存储、文件系统、设备管理与输入输出。课程实验基于一个小型教学内核展开，要求学生实现系统调用、进程调度与简单的文件系统，从而理解抽象概念背后的真实代码。 考核方式 期末考试 55%、平时作业 15%、实验项目 30% 参考教材 《操作系统概念（第 9 版）》 《现代操作系统》 标签 专业核心课、系统、必修。"
+    },
+    {
+      "id": "eval_013",
+      "question": "操作系统需要先修哪些课程？",
+      "type": "relation",
+      "expected_route": "faq",
+      "actual_route": "course_query",
+      "route_correct": false,
+      "expected_course_id": "CS302",
+      "expected_course_ids": [
+        "CS302"
+      ],
+      "retrieved_course_ids": [
+        "CS302",
+        "CS301",
+        "CS101",
+        "CS201",
+        "CS202"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.7321,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": false,
+      "latency_ms": 33.494,
+      "answer": "根据《操作系统》（CS302）课程资料：课程：操作系统（CS302） 学分：4 | 授课教师：赵磊 | 开课学期：2026-2027-2 | 先修课程：CS201,CS202 课程简介 讲授操作系统的核心机制与实现思路。内容包括进程与线程、处理机调度、进程同步与死锁、内存管理与虚拟存储、文件系统、设备管理与输入输出。课程实验基于一个小型教学内核展开，要求学生实现系统调用、进程调度与简单的文件系统，从而理解抽象概念背后的真实代码。 考核方式 期末考试 55%、平时作业 15%、实验项目 30% 参考教材 《操作系统概念（第 9 版）》 《现代操作系统》 标签 专业核心课、系统、必修。 根据《数据库系统》（CS301）课程资料：课程：数据库系统（CS301） 学分：3.5 | 授课教师：陈静 | 开课学期：2026-2027-2 | 先修课程：CS201 课程简介 讲授数据库系统的原理与工程实践。内容包括关系模型与关系代数、SQL 语言、数据库设计与范式理论、索引与查询优化、事务与并发控制、故障恢复。课程以一个完整的业务系统为背景，要求学生完成从概念设计到物理实现、再到查询调优的全过程。 考核方式 期末考试 50%、平时作业 20%、实验项目 30% 参考教材 《数据库系统概论（第 6 版）》 《SQL 必知必会》 标签 专业核心课、数据管理、必修。 根据《程序设计基础》（CS101）课程资料：课程：程序设计基础（CS101） 学分：4 | 授课教师：李明 | 开课学期：2026-2027-1 | 先修课程：无 课程简介 面向零基础学生的程序设计入门课程。以 C 语言为载体，讲授变量与数据类型、运算符与表达式、流程控制、函数与递归、数组与字符串、指针初步以及结构体等内容，重点训练把自然语言描述的问题转化为可执行程序的能力。课程包含大量上机练习，要求学生在学期内独立完成不少于 800 行代码。 考核方式 期末考试 50%、平时作业 30%、实验项目 20% 参考教材 《C 程序设计语言（第 2 版）》 《程序设计基础实验指导》 标签 专业基础课、编程入门、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程简介 本课程是计算机类专业的核心课程，系统介绍常用数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的经典算法及其复杂度分析。 课程以 C 语言为描述语言，强调\"先想清楚数据怎么组织，再动手写代码\"的思维方式。学完本课程后，学生应当能够针对一个具体问题判断该用数组、链表、树还是图，能够估算不同实现方案的时间与空间代价，并能读懂主流算法题解中出现的复杂度记号。 本课程是后续数据库系统、操作系统、编译原理与机器学习等课程的共同基础。。 根据《计算机组成原理》（CS202）课程资料：课程：计算机组成原理（CS202） 学分：4 | 授课教师：刘洋 | 开课学期：2026-2027-1 | 先修课程：CS101 课程简介 讲授单机系统的硬件组成与工作原理。内容包括数据的表示与运算、存储系统层次结构、指令系统与寻址方式、中央处理器的结构与指令执行流程、总线与输入输出系统。通过实验环节让学生理解高级语言程序到机器指令的映射过程，为操作系统与体系结构类课程建立硬件视角。 考核方式 期末考试 60%、平时作业 25%、实验项目 15% 参考教材 《计算机组成原理（第 3 版）》 标签 专业核心课、硬件、必修。"
+    },
+    {
+      "id": "eval_014",
+      "question": "和数据结构有先修关系的课程有哪些？",
+      "type": "relation",
+      "expected_route": "course_query",
+      "actual_route": "course_query",
+      "route_correct": true,
+      "expected_course_id": "CS201",
+      "expected_course_ids": [
+        "CS201",
+        "CS301",
+        "CS302",
+        "CS401"
+      ],
+      "retrieved_course_ids": [
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS201"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.7117,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": false,
+      "latency_ms": 28.265,
+      "answer": "根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程简介 本课程是计算机类专业的核心课程，系统介绍常用数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的经典算法及其复杂度分析。 课程以 C 语言为描述语言，强调\"先想清楚数据怎么组织，再动手写代码\"的思维方式。学完本课程后，学生应当能够针对一个具体问题判断该用数组、链表、树还是图，能够估算不同实现方案的时间与空间代价，并能读懂主流算法题解中出现的复杂度记号。 本课程是后续数据库系统、操作系统、编译原理与机器学习等课程的共同基础。。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程基本信息 - 课程编号：CS201 - 学分：4 - 授课教师：张伟 - 开课学期：2026-2027-1 - 先修课程：CS101 - 课程类型：专业核心课。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 课程简介 计算机类专业的核心课程。系统讲授线性表、栈与队列、串、树与二叉树、图等基本数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的常见算法及其复杂度分析。课程要求学生能够针对具体问题选择合适的数据结构，并用代码实现与评估其时间空间代价。 考核方式 期末考试 60%、平时作业 20%、实验项目 20% 参考教材 《数据结构（C 语言版）》 《算法设计基础》 标签 专业核心课、算法、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 教学目标 - 掌握线性表、栈、队列、串、树、图等基本数据结构的逻辑结构与存储表示 - 能够独立用 C 语言实现上述数据结构及其典型操作，代码正确、边界处理完整 - 理解时间复杂度与空间复杂度的定义，能够对给定算法做出渐进分析 - 能够针对具体应用场景在多种数据结构之间做出有依据的取舍 - 具备阅读并复现经典算法（排序、查找、图遍历）的能力。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 参考教材 - 《数据结构（C 语言版）》 - 《算法设计基础》 - 《算法导论（第 3 版）》 - 《大话数据结构》。"
+    },
+    {
+      "id": "eval_015",
+      "question": "机器学习导论的前置课程包括哪些？",
+      "type": "relation",
+      "expected_route": "faq",
+      "actual_route": "faq",
+      "route_correct": true,
+      "expected_course_id": "CS401",
+      "expected_course_ids": [
+        "CS401"
+      ],
+      "retrieved_course_ids": [
+        "CS401",
+        "CS202",
+        "CS201",
+        "MA101",
+        "CS201"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.6615,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": false,
+      "latency_ms": 31.037,
+      "answer": "根据《机器学习导论》（CS401）课程资料：课程：机器学习导论（CS401） 学分：3 | 授课教师：孙倩 | 开课学期：2026-2027-2 | 先修课程：CS201,MA101 课程简介 面向高年级本科生的机器学习入门课程。内容包括监督学习与无监督学习的基本框架、线性模型与逻辑回归、决策树与集成方法、支持向量机、聚类与降维、模型评估与过拟合处理。课程以项目驱动，要求学生在真实数据集上完成特征工程、模型训练与调参，并撰写实验报告说明结论的可靠性边界。 考核方式 期末考试 40%、平时作业 20%、实验项目 40% 参考教材 《机器学习》 《统计学习方法（第 2 版）》 标签 专业选修课、人工智能、项目驱动。 根据《计算机组成原理》（CS202）课程资料：课程：计算机组成原理（CS202） 学分：4 | 授课教师：刘洋 | 开课学期：2026-2027-1 | 先修课程：CS101 课程简介 讲授单机系统的硬件组成与工作原理。内容包括数据的表示与运算、存储系统层次结构、指令系统与寻址方式、中央处理器的结构与指令执行流程、总线与输入输出系统。通过实验环节让学生理解高级语言程序到机器指令的映射过程，为操作系统与体系结构类课程建立硬件视角。 考核方式 期末考试 60%、平时作业 25%、实验项目 15% 参考教材 《计算机组成原理（第 3 版）》 标签 专业核心课、硬件、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程简介 本课程是计算机类专业的核心课程，系统介绍常用数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的经典算法及其复杂度分析。 课程以 C 语言为描述语言，强调\"先想清楚数据怎么组织，再动手写代码\"的思维方式。学完本课程后，学生应当能够针对一个具体问题判断该用数组、链表、树还是图，能够估算不同实现方案的时间与空间代价，并能读懂主流算法题解中出现的复杂度记号。 本课程是后续数据库系统、操作系统、编译原理与机器学习等课程的共同基础。。 根据《高等数学（上）》（MA101）课程资料：课程：高等数学（上）（MA101） 学分：5 | 授课教师：王芳 | 开课学期：2026-2027-1 | 先修课程：无 课程简介 理工科各专业的数学基础课，覆盖一元函数微积分。内容包括极限与连续、导数与微分、微分中值定理及其应用、不定积分与定积分、定积分的几何与物理应用。课程强调极限思想与严格的推理训练，为后续的概率统计、数值计算与机器学习类课程打基础。 考核方式 期末考试 70%、平时作业 30% 参考教材 《高等数学（上册）》 《高等数学习题精选》 标签 数学基础课、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 教学内容 本课程共 64 学时，其中理论讲授 48 学时、实验 16 学时。内容按\"抽象数据类型 → 存储实现 → 典型操作 → 复杂度分析\"的顺序组织，每一章都配有对应的上机实验。 ### 第一章 绪论（4 学时） - 数据结构的基本概念：数据、数据元素、数据项与数据对象 - 逻辑结构与存储结构的区别与联系，四种基本逻辑结构的划分 - 抽象数据类型的定义、表示与实现三者之间的关系 - 算法及其特性，时间复杂度与空间复杂度的渐进表示法（大 O 记号） - 常见复杂度量级的比较：常数、对数、线性、线性对数、平方、指数 重点与难点：区分\"逻辑结构\"与\"存储结构\"这两个层次，理解为什么同一个逻辑结构可以有不同的存储实现，而不同的存储实现会带来完全不同的操作代价。 ### 第二章 线性表（8 学时） - 线性表的定义与抽象数据类型描述 - 顺序存储：顺序表的插入、删除、按位查找、按值查找及其复杂度分析 - 链式存储：单链表的建立（头插法与尾插法）、插入、删除、查找 - 双向链表与循环链表的结构特点，以及它们在插入删除时的边界处理差异 - 顺序表与链表的对比：随机访问能力、插入删除代价、存储开销、缓存友好性 - 有序表的合并、归并与去重 重点与难点：链表操作中指针的赋值顺序。删除结点时\"先改指针再释放内存\"与\"先释放再改指针\"的区别，是初学者最常出错的地方。 实验一：实现一个支持插入、删除、按值查找与遍历的动态顺序表，要求能够自动扩容，并在删除后能够收缩容量。 ###。"
+    },
+    {
+      "id": "eval_016",
+      "question": "缓考怎么申请？",
+      "type": "process",
+      "expected_route": "process_query",
+      "actual_route": "process_query",
+      "route_correct": true,
+      "expected_course_id": null,
+      "expected_course_ids": [],
+      "retrieved_course_ids": [
+        "MA101",
+        "CS201",
+        "CS201",
+        "CS401",
+        "CS101"
+      ],
+      "retrieval_hit": null,
+      "top_relevance_score": 0.428,
+      "recall_hits": {},
+      "should_reject": true,
+      "actual_rejected": true,
+      "keyword_hit": null,
+      "keyword_coverage": null,
+      "cached": false,
+      "latency_ms": 29.315,
+      "answer": "知识库中暂未找到与该问题相关的课程资料，无法回答。可以换个说法，或确认一下课程编号（例如 CS201）。"
+    },
+    {
+      "id": "eval_017",
+      "question": "补考需要什么手续？",
+      "type": "process",
+      "expected_route": "process_query",
+      "actual_route": "process_query",
+      "route_correct": true,
+      "expected_course_id": null,
+      "expected_course_ids": [],
+      "retrieved_course_ids": [
+        "MA101",
+        "CS201",
+        "CS401",
+        "CS101",
+        "CS201"
+      ],
+      "retrieval_hit": null,
+      "top_relevance_score": 0.4213,
+      "recall_hits": {},
+      "should_reject": true,
+      "actual_rejected": true,
+      "keyword_hit": null,
+      "keyword_coverage": null,
+      "cached": false,
+      "latency_ms": 31.666,
+      "answer": "知识库中暂未找到与该问题相关的课程资料，无法回答。可以换个说法，或确认一下课程编号（例如 CS201）。"
+    },
+    {
+      "id": "eval_018",
+      "question": "怎么申请学分认定？",
+      "type": "process",
+      "expected_route": "process_query",
+      "actual_route": "process_query",
+      "route_correct": true,
+      "expected_course_id": null,
+      "expected_course_ids": [],
+      "retrieved_course_ids": [
+        "MA101",
+        "CS201",
+        "CS101",
+        "CS401",
+        "CS201"
+      ],
+      "retrieval_hit": null,
+      "top_relevance_score": 0.4991,
+      "recall_hits": {},
+      "should_reject": true,
+      "actual_rejected": true,
+      "keyword_hit": null,
+      "keyword_coverage": null,
+      "cached": false,
+      "latency_ms": 30.576,
+      "answer": "知识库中暂未找到与该问题相关的课程资料，无法回答。可以换个说法，或确认一下课程编号（例如 CS201）。"
+    },
+    {
+      "id": "eval_019",
+      "question": "重修课程的流程是什么？",
+      "type": "process",
+      "expected_route": "process_query",
+      "actual_route": "process_query",
+      "route_correct": true,
+      "expected_course_id": null,
+      "expected_course_ids": [],
+      "retrieved_course_ids": [
+        "CS101",
+        "MA101",
+        "CS302",
+        "CS301",
+        "CS201"
+      ],
+      "retrieval_hit": null,
+      "top_relevance_score": 0.5631,
+      "recall_hits": {},
+      "should_reject": true,
+      "actual_rejected": false,
+      "keyword_hit": null,
+      "keyword_coverage": null,
+      "cached": false,
+      "latency_ms": 30.236,
+      "answer": "根据《程序设计基础》（CS101）课程资料：课程：程序设计基础（CS101） 学分：4 | 授课教师：李明 | 开课学期：2026-2027-1 | 先修课程：无 课程简介 面向零基础学生的程序设计入门课程。以 C 语言为载体，讲授变量与数据类型、运算符与表达式、流程控制、函数与递归、数组与字符串、指针初步以及结构体等内容，重点训练把自然语言描述的问题转化为可执行程序的能力。课程包含大量上机练习，要求学生在学期内独立完成不少于 800 行代码。 考核方式 期末考试 50%、平时作业 30%、实验项目 20% 参考教材 《C 程序设计语言（第 2 版）》 《程序设计基础实验指导》 标签 专业基础课、编程入门、必修。 根据《高等数学（上）》（MA101）课程资料：课程：高等数学（上）（MA101） 学分：5 | 授课教师：王芳 | 开课学期：2026-2027-1 | 先修课程：无 课程简介 理工科各专业的数学基础课，覆盖一元函数微积分。内容包括极限与连续、导数与微分、微分中值定理及其应用、不定积分与定积分、定积分的几何与物理应用。课程强调极限思想与严格的推理训练，为后续的概率统计、数值计算与机器学习类课程打基础。 考核方式 期末考试 70%、平时作业 30% 参考教材 《高等数学（上册）》 《高等数学习题精选》 标签 数学基础课、必修。 根据《操作系统》（CS302）课程资料：课程：操作系统（CS302） 学分：4 | 授课教师：赵磊 | 开课学期：2026-2027-2 | 先修课程：CS201,CS202 课程简介 讲授操作系统的核心机制与实现思路。内容包括进程与线程、处理机调度、进程同步与死锁、内存管理与虚拟存储、文件系统、设备管理与输入输出。课程实验基于一个小型教学内核展开，要求学生实现系统调用、进程调度与简单的文件系统，从而理解抽象概念背后的真实代码。 考核方式 期末考试 55%、平时作业 15%、实验项目 30% 参考教材 《操作系统概念（第 9 版）》 《现代操作系统》 标签 专业核心课、系统、必修。 根据《数据库系统》（CS301）课程资料：课程：数据库系统（CS301） 学分：3.5 | 授课教师：陈静 | 开课学期：2026-2027-2 | 先修课程：CS201 课程简介 讲授数据库系统的原理与工程实践。内容包括关系模型与关系代数、SQL 语言、数据库设计与范式理论、索引与查询优化、事务与并发控制、故障恢复。课程以一个完整的业务系统为背景，要求学生完成从概念设计到物理实现、再到查询调优的全过程。 考核方式 期末考试 50%、平时作业 20%、实验项目 30% 参考教材 《数据库系统概论（第 6 版）》 《SQL 必知必会》 标签 专业核心课、数据管理、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程简介 本课程是计算机类专业的核心课程，系统介绍常用数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的经典算法及其复杂度分析。 课程以 C 语言为描述语言，强调\"先想清楚数据怎么组织，再动手写代码\"的思维方式。学完本课程后，学生应当能够针对一个具体问题判断该用数组、链表、树还是图，能够估算不同实现方案的时间与空间代价，并能读懂主流算法题解中出现的复杂度记号。 本课程是后续数据库系统、操作系统、编译原理与机器学习等课程的共同基础。。"
+    },
+    {
+      "id": "eval_020",
+      "question": "选课系统什么时候开放？",
+      "type": "process",
+      "expected_route": "process_query",
+      "actual_route": "course_query",
+      "route_correct": false,
+      "expected_course_id": null,
+      "expected_course_ids": [],
+      "retrieved_course_ids": [
+        "CS302",
+        "CS201",
+        "CS301",
+        "CS201",
+        "CS401"
+      ],
+      "retrieval_hit": null,
+      "top_relevance_score": 0.4793,
+      "recall_hits": {},
+      "should_reject": true,
+      "actual_rejected": true,
+      "keyword_hit": null,
+      "keyword_coverage": null,
+      "cached": false,
+      "latency_ms": 29.316,
+      "answer": "知识库中暂未找到与该问题相关的课程资料，无法回答。可以换个说法，或确认一下课程编号（例如 CS201）。"
+    },
+    {
+      "id": "eval_021",
+      "question": "CS101学分是多少",
+      "type": "faq",
+      "expected_route": "faq",
+      "actual_route": "faq",
+      "route_correct": true,
+      "expected_course_id": "CS101",
+      "expected_course_ids": [
+        "CS101"
+      ],
+      "retrieved_course_ids": [
+        "CS401",
+        "CS201",
+        "CS201",
+        "MA101",
+        "CS201"
+      ],
+      "retrieval_hit": false,
+      "top_relevance_score": 0.5959,
+      "recall_hits": {
+        "3": false,
+        "5": false,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": true,
+      "latency_ms": 0.17,
+      "answer": "CS101《程序设计基础》为 4 学分，授课教师李明，开课学期 2026-2027-1。"
+    },
+    {
+      "id": "eval_022",
+      "question": "CS201的先修课是什么",
+      "type": "faq",
+      "expected_route": "faq",
+      "actual_route": "faq",
+      "route_correct": true,
+      "expected_course_id": "CS201",
+      "expected_course_ids": [
+        "CS201"
+      ],
+      "retrieved_course_ids": [
+        "CS302",
+        "CS401",
+        "CS201",
+        "CS201",
+        "CS101"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.5919,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": true,
+      "latency_ms": 0.157,
+      "answer": "CS201《数据结构与算法》的先修课程是 CS101《程序设计基础》。"
+    },
+    {
+      "id": "eval_023",
+      "question": "CS201的考核方式",
+      "type": "faq",
+      "expected_route": "faq",
+      "actual_route": "faq",
+      "route_correct": true,
+      "expected_course_id": "CS201",
+      "expected_course_ids": [
+        "CS201"
+      ],
+      "retrieved_course_ids": [
+        "CS302",
+        "CS401",
+        "CS301",
+        "CS202",
+        "CS201"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.6293,
+      "recall_hits": {
+        "3": false,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": true,
+      "latency_ms": 0.449,
+      "answer": "CS201《数据结构与算法》的考核方式：期末考试 60%、平时作业 20%、实验项目 20%。"
+    },
+    {
+      "id": "eval_024",
+      "question": "CS201用什么教材",
+      "type": "faq",
+      "expected_route": "faq",
+      "actual_route": "faq",
+      "route_correct": true,
+      "expected_course_id": "CS201",
+      "expected_course_ids": [
+        "CS201"
+      ],
+      "retrieved_course_ids": [
+        "CS401",
+        "CS302",
+        "CS301",
+        "CS202",
+        "CS201"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.5783,
+      "recall_hits": {
+        "3": false,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": true,
+      "latency_ms": 0.161,
+      "answer": "CS201《数据结构与算法》的参考教材：《数据结构（C 语言版）》《算法设计基础》《算法导论（第 3 版）》《大话数据结构》。"
+    },
+    {
+      "id": "eval_025",
+      "question": "高等数学（上）几学分",
+      "type": "faq",
+      "expected_route": "faq",
+      "actual_route": "faq",
+      "route_correct": true,
+      "expected_course_id": "MA101",
+      "expected_course_ids": [
+        "MA101"
+      ],
+      "retrieved_course_ids": [
+        "MA101",
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS201"
+      ],
+      "retrieval_hit": true,
+      "top_relevance_score": 0.7686,
+      "recall_hits": {
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "should_reject": false,
+      "actual_rejected": false,
+      "keyword_hit": true,
+      "keyword_coverage": 1.0,
+      "cached": true,
+      "latency_ms": 0.145,
+      "answer": "MA101《高等数学（上）》为 5 学分，授课教师王芳，开课学期 2026-2027-1。"
+    },
+    {
+      "id": "eval_026",
+      "question": "食堂几点开门？",
+      "type": "rejection",
+      "expected_route": "course_query",
+      "actual_route": "course_query",
+      "route_correct": true,
+      "expected_course_id": null,
+      "expected_course_ids": [],
+      "retrieved_course_ids": [
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS302",
+        "CS101"
+      ],
+      "retrieval_hit": null,
+      "top_relevance_score": 0.3906,
+      "recall_hits": {},
+      "should_reject": true,
+      "actual_rejected": true,
+      "keyword_hit": null,
+      "keyword_coverage": null,
+      "cached": false,
+      "latency_ms": 23.708,
+      "answer": "知识库中暂未找到与该问题相关的课程资料，无法回答。可以换个说法，或确认一下课程编号（例如 CS201）。"
+    },
+    {
+      "id": "eval_027",
+      "question": "学校附近有什么好吃的餐厅？",
+      "type": "rejection",
+      "expected_route": "course_query",
+      "actual_route": "course_query",
+      "route_correct": true,
+      "expected_course_id": null,
+      "expected_course_ids": [],
+      "retrieved_course_ids": [
+        "MA101",
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS201"
+      ],
+      "retrieval_hit": null,
+      "top_relevance_score": 0.1922,
+      "recall_hits": {},
+      "should_reject": true,
+      "actual_rejected": true,
+      "keyword_hit": null,
+      "keyword_coverage": null,
+      "cached": false,
+      "latency_ms": 31.089,
+      "answer": "知识库中暂未找到与该问题相关的课程资料，无法回答。可以换个说法，或确认一下课程编号（例如 CS201）。"
+    },
+    {
+      "id": "eval_028",
+      "question": "东京今天多少度？",
+      "type": "rejection",
+      "expected_route": "course_query",
+      "actual_route": "course_query",
+      "route_correct": true,
+      "expected_course_id": null,
+      "expected_course_ids": [],
+      "retrieved_course_ids": [
+        "CS201",
+        "CS201",
+        "CS201",
+        "MA101",
+        "CS201"
+      ],
+      "retrieval_hit": null,
+      "top_relevance_score": 0.2696,
+      "recall_hits": {},
+      "should_reject": true,
+      "actual_rejected": true,
+      "keyword_hit": null,
+      "keyword_coverage": null,
+      "cached": false,
+      "latency_ms": 29.263,
+      "answer": "知识库中暂未找到与该问题相关的课程资料，无法回答。可以换个说法，或确认一下课程编号（例如 CS201）。"
+    },
+    {
+      "id": "eval_029",
+      "question": "这所大学的校长是谁？",
+      "type": "rejection",
+      "expected_route": "course_query",
+      "actual_route": "course_query",
+      "route_correct": true,
+      "expected_course_id": null,
+      "expected_course_ids": [],
+      "retrieved_course_ids": [
+        "CS201",
+        "CS201",
+        "CS302",
+        "CS201",
+        "CS201"
+      ],
+      "retrieval_hit": null,
+      "top_relevance_score": 0.3467,
+      "recall_hits": {},
+      "should_reject": true,
+      "actual_rejected": true,
+      "keyword_hit": null,
+      "keyword_coverage": null,
+      "cached": false,
+      "latency_ms": 28.528,
+      "answer": "知识库中暂未找到与该问题相关的课程资料，无法回答。可以换个说法，或确认一下课程编号（例如 CS201）。"
+    },
+    {
+      "id": "eval_030",
+      "question": "C++ 和 Python 哪个更适合初学者？",
+      "type": "rejection",
+      "expected_route": "course_query",
+      "actual_route": "course_query",
+      "route_correct": true,
+      "expected_course_id": null,
+      "expected_course_ids": [],
+      "retrieved_course_ids": [
+        "CS101",
+        "CS201",
+        "CS201",
+        "CS201",
+        "CS201"
+      ],
+      "retrieval_hit": null,
+      "top_relevance_score": 0.5754,
+      "recall_hits": {},
+      "should_reject": true,
+      "actual_rejected": false,
+      "keyword_hit": null,
+      "keyword_coverage": null,
+      "cached": false,
+      "latency_ms": 29.33,
+      "answer": "根据《程序设计基础》（CS101）课程资料：课程：程序设计基础（CS101） 学分：4 | 授课教师：李明 | 开课学期：2026-2027-1 | 先修课程：无 课程简介 面向零基础学生的程序设计入门课程。以 C 语言为载体，讲授变量与数据类型、运算符与表达式、流程控制、函数与递归、数组与字符串、指针初步以及结构体等内容，重点训练把自然语言描述的问题转化为可执行程序的能力。课程包含大量上机练习，要求学生在学期内独立完成不少于 800 行代码。 考核方式 期末考试 50%、平时作业 30%、实验项目 20% 参考教材 《C 程序设计语言（第 2 版）》 《程序设计基础实验指导》 标签 专业基础课、编程入门、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 课程简介 本课程是计算机类专业的核心课程，系统介绍常用数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的经典算法及其复杂度分析。 课程以 C 语言为描述语言，强调\"先想清楚数据怎么组织，再动手写代码\"的思维方式。学完本课程后，学生应当能够针对一个具体问题判断该用数组、链表、树还是图，能够估算不同实现方案的时间与空间代价，并能读懂主流算法题解中出现的复杂度记号。 本课程是后续数据库系统、操作系统、编译原理与机器学习等课程的共同基础。。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 课程简介 计算机类专业的核心课程。系统讲授线性表、栈与队列、串、树与二叉树、图等基本数据结构的逻辑结构、存储实现与典型操作，并配套讲解查找与排序的常见算法及其复杂度分析。课程要求学生能够针对具体问题选择合适的数据结构，并用代码实现与评估其时间空间代价。 考核方式 期末考试 60%、平时作业 20%、实验项目 20% 参考教材 《数据结构（C 语言版）》 《算法设计基础》 标签 专业核心课、算法、必修。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 参考教材 - 《数据结构（C 语言版）》 - 《算法设计基础》 - 《算法导论（第 3 版）》 - 《大话数据结构》。 根据《数据结构与算法》（CS201）课程资料：课程：数据结构与算法（CS201） 学分：4 | 授课教师：张伟 | 开课学期：2026-2027-1 | 先修课程：CS101 ## 教学目标 - 掌握线性表、栈、队列、串、树、图等基本数据结构的逻辑结构与存储表示 - 能够独立用 C 语言实现上述数据结构及其典型操作，代码正确、边界处理完整 - 理解时间复杂度与空间复杂度的定义，能够对给定算法做出渐进分析 - 能够针对具体应用场景在多种数据结构之间做出有依据的取舍 - 具备阅读并复现经典算法（排序、查找、图遍历）的能力。"
+    }
+  ],
+  "caveats": [
+    "生成层用的是把检索资料拼成答案的假实现（ContextEchoLLM），因此 keyword_hit_rate 反映的是**检索到的资料里有没有那条事实**，而不是模型的写作与幻觉控制能力。要度量后者请用 --llm real。",
+    "意图分类用的是真实规则层（classification=rules-only）：FAQ 规则可短路，其余落到规则候选或默认 course_query。「LLM 能否更准地判意图」不在本轮度量范围内。",
+    "延迟是链路内部耗时（Pipeline 自测），不含 HTTP 序列化、SSE 分帧与网络往返，因此会小于用 curl / 压测工具看到的端到端耗时。",
+    "样本量 全部 条，p95 实际只由少数样本决定，不要当成线上 SLA 引用；要稳定结论需要上百条量级的评测集。"
+  ]
+}
