@@ -1,0 +1,270 @@
+{
+  "version": "1",
+  "description": "阶段 7 评测集：30 条，覆盖事实查询 / 关系查询 / 流程查询 / FAQ / 拒答。所有期望值都来自 data/raw 的真实语料与 data/faq.json，不要凭印象改。",
+  "cases": [
+    {
+      "id": "eval_001",
+      "type": "factual",
+      "question": "数据结构的学分是多少？",
+      "expected_route": "faq",
+      "expected_course_id": "CS201",
+      "should_reject": false,
+      "expected_answer_keywords": ["4", "学分"],
+      "note": "「多少学分」命中 FAQ 规则 → 走 FAQ 分支；FAQ 库里没有这条 → 继续 RAG。"
+    },
+    {
+      "id": "eval_002",
+      "type": "factual",
+      "question": "高等数学（上）是谁教的？",
+      "expected_route": "faq",
+      "expected_course_id": "MA101",
+      "should_reject": false,
+      "expected_answer_keywords": ["王芳"],
+      "note": "「谁教」命中 FAQ 规则；FAQ 库里的问法是「高等数学上是谁教的」，归一化后能精确匹配。"
+    },
+    {
+      "id": "eval_003",
+      "type": "factual",
+      "question": "计算机组成原理有几个学分？",
+      "expected_route": "faq",
+      "expected_course_id": "CS202",
+      "should_reject": false,
+      "expected_answer_keywords": ["4", "学分"]
+    },
+    {
+      "id": "eval_004",
+      "type": "factual",
+      "question": "操作系统的授课教师是谁？",
+      "expected_route": "faq",
+      "expected_course_id": "CS302",
+      "should_reject": false,
+      "expected_answer_keywords": ["赵磊"]
+    },
+    {
+      "id": "eval_005",
+      "type": "factual",
+      "question": "机器学习导论是哪一学期开的课？",
+      "expected_route": "course_query",
+      "expected_course_id": "CS401",
+      "should_reject": false,
+      "expected_answer_keywords": ["2026-2027-2"],
+      "note": "「学期」不在 FAQ 关键词表里，走检索。"
+    },
+    {
+      "id": "eval_006",
+      "type": "factual",
+      "question": "数据库系统的考核方式是怎样的？",
+      "expected_route": "faq",
+      "expected_course_id": "CS301",
+      "should_reject": false,
+      "expected_answer_keywords": ["50", "期末"],
+      "note": "CS301 考核占比：期末 50%、平时作业 20%、实验项目 30%。FAQ 库里只有 CS201 的考核方式，因此本条的 FAQ 分支必然未命中、转 RAG。"
+    },
+    {
+      "id": "eval_007",
+      "type": "factual",
+      "question": "程序设计基础的课程编号是多少？",
+      "expected_route": "course_query",
+      "expected_course_id": "CS101",
+      "should_reject": false,
+      "expected_answer_keywords": ["CS101"]
+    },
+    {
+      "id": "eval_008",
+      "type": "factual",
+      "question": "数据结构与算法有多少学时？",
+      "expected_route": "course_query",
+      "expected_course_id": "CS201",
+      "should_reject": false,
+      "expected_answer_keywords": ["64"],
+      "note": "只有教学大纲里有学时（64 学时，理论 48 + 实验 16），考的是能不能命中大纲而不是概览。"
+    },
+    {
+      "id": "eval_009",
+      "type": "factual",
+      "question": "机器学习导论用什么教材？",
+      "expected_route": "faq",
+      "expected_course_id": "CS401",
+      "should_reject": false,
+      "expected_answer_keywords": ["统计学习方法"],
+      "note": "「用什么教材」命中 FAQ 规则；FAQ 库里只有 CS201 的教材条目，本条会转 RAG。CS401 在 data/raw/courses.json 里确实有教材（机器学习、统计学习方法（第 2 版）），所以关键词用教材名——这条实际考的是「检索能不能把那本教材捞回来」。"
+    },
+    {
+      "id": "eval_010",
+      "type": "factual",
+      "question": "高等数学（上）的期末考试占多少比例？",
+      "expected_route": "faq",
+      "expected_course_id": "MA101",
+      "should_reject": false,
+      "expected_answer_keywords": ["70"],
+      "note": "MA101 考核占比：期末 70%、平时作业 30%。"
+    },
+    {
+      "id": "eval_011",
+      "type": "relation",
+      "question": "哪些课程的先修课里有 CS101？",
+      "expected_route": "course_query",
+      "expected_course_ids": ["CS201", "CS202"],
+      "should_reject": false,
+      "expected_answer_keywords": ["CS201", "CS202"],
+      "note": "多答案问题：Recall 判定为「任一期望课程出现在前 K 条」；关键词要求两个都出现，因为这题本来就该答全。"
+    },
+    {
+      "id": "eval_012",
+      "type": "relation",
+      "question": "数据库系统的先修课程是什么？",
+      "expected_route": "faq",
+      "expected_course_id": "CS301",
+      "should_reject": false,
+      "expected_answer_keywords": ["CS201"]
+    },
+    {
+      "id": "eval_013",
+      "type": "relation",
+      "question": "操作系统需要先修哪些课程？",
+      "expected_route": "faq",
+      "expected_course_id": "CS302",
+      "should_reject": false,
+      "expected_answer_keywords": ["CS201", "CS202"]
+    },
+    {
+      "id": "eval_014",
+      "type": "relation",
+      "question": "和数据结构有先修关系的课程有哪些？",
+      "expected_route": "course_query",
+      "expected_course_ids": ["CS201", "CS301", "CS302", "CS401"],
+      "should_reject": false,
+      "expected_answer_keywords": ["CS201"],
+      "note": "CS201 是 CS301/CS302/CS401 的共同先修课，同时它自己先修 CS101。"
+    },
+    {
+      "id": "eval_015",
+      "type": "relation",
+      "question": "机器学习导论的前置课程包括哪些？",
+      "expected_route": "faq",
+      "expected_course_id": "CS401",
+      "should_reject": false,
+      "expected_answer_keywords": ["CS201", "MA101"]
+    },
+    {
+      "id": "eval_016",
+      "type": "process",
+      "question": "缓考怎么申请？",
+      "expected_route": "process_query",
+      "should_reject": true,
+      "note": "语料里没有任何教务流程文档（grep 缓考/补考/选课 均为 0 命中）。正确行为是识别为流程问题后拒答；将来补了教务文档，把 should_reject 改成 false 并补 expected_course_id 即可。"
+    },
+    {
+      "id": "eval_017",
+      "type": "process",
+      "question": "补考需要什么手续？",
+      "expected_route": "process_query",
+      "should_reject": true
+    },
+    {
+      "id": "eval_018",
+      "type": "process",
+      "question": "怎么申请学分认定？",
+      "expected_route": "process_query",
+      "should_reject": true
+    },
+    {
+      "id": "eval_019",
+      "type": "process",
+      "question": "重修课程的流程是什么？",
+      "expected_route": "process_query",
+      "should_reject": true
+    },
+    {
+      "id": "eval_020",
+      "type": "process",
+      "question": "选课系统什么时候开放？",
+      "expected_route": "process_query",
+      "should_reject": true
+    },
+    {
+      "id": "eval_021",
+      "type": "faq",
+      "question": "CS101学分是多少",
+      "expected_route": "faq",
+      "expected_course_id": "CS101",
+      "should_reject": false,
+      "expected_answer_keywords": ["4", "学分"],
+      "note": "与 data/faq.json 的 pattern「CS101 学分是多少」归一化后完全一致 → 精确命中。"
+    },
+    {
+      "id": "eval_022",
+      "type": "faq",
+      "question": "CS201的先修课是什么",
+      "expected_route": "faq",
+      "expected_course_id": "CS201",
+      "should_reject": false,
+      "expected_answer_keywords": ["CS101"]
+    },
+    {
+      "id": "eval_023",
+      "type": "faq",
+      "question": "CS201的考核方式",
+      "expected_route": "faq",
+      "expected_course_id": "CS201",
+      "should_reject": false,
+      "expected_answer_keywords": ["60", "20"],
+      "note": "比 pattern 少一个「是什么」，靠模糊匹配（相似度约 0.87 ≥ 0.85）命中——这条专门用来盯住 FAQ_MATCH_THRESHOLD 有没有被调坏。"
+    },
+    {
+      "id": "eval_024",
+      "type": "faq",
+      "question": "CS201用什么教材",
+      "expected_route": "faq",
+      "expected_course_id": "CS201",
+      "should_reject": false,
+      "expected_answer_keywords": ["算法导论"]
+    },
+    {
+      "id": "eval_025",
+      "type": "faq",
+      "question": "高等数学（上）几学分",
+      "expected_route": "faq",
+      "expected_course_id": "MA101",
+      "should_reject": false,
+      "expected_answer_keywords": ["5", "学分"]
+    },
+    {
+      "id": "eval_026",
+      "type": "rejection",
+      "question": "食堂几点开门？",
+      "expected_route": "course_query",
+      "should_reject": true,
+      "note": "知识库只含课程数据，与课程无关的问题应当拒答而不是硬答。"
+    },
+    {
+      "id": "eval_027",
+      "type": "rejection",
+      "question": "学校附近有什么好吃的餐厅？",
+      "expected_route": "course_query",
+      "should_reject": true
+    },
+    {
+      "id": "eval_028",
+      "type": "rejection",
+      "question": "东京今天多少度？",
+      "expected_route": "course_query",
+      "should_reject": true
+    },
+    {
+      "id": "eval_029",
+      "type": "rejection",
+      "question": "这所大学的校长是谁？",
+      "expected_route": "course_query",
+      "should_reject": true
+    },
+    {
+      "id": "eval_030",
+      "type": "rejection",
+      "question": "C++ 和 Python 哪个更适合初学者？",
+      "expected_route": "course_query",
+      "should_reject": true,
+      "note": "典型的「用常识就能答」问题——正是最该拒答的一类：答了就是在用常识替代知识库。"
+    }
+  ]
+}
